@@ -7,21 +7,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
-  <link rel="stylesheet" href="../assets/css/style.css">
+
 </head>
 <body>
+    <h2 style="background-color:aqua " class="text-center">User Profile Management </h2>
     <div class="container">
-        <h2 style="background-color:aqua">User Profile Management </h2>
-        <a href="/adduser">Add user</a>
+      
+        <a href="/adduser" style="color:black;margin-top:50px ;font-size:30px;text-decoration:none;background-color:blue;border-radius:5px;padding:3px">Add New User</a>
         <form action="/" method="POST">
-<table class="table">
+<table style="margin-top:50px" class="table">
     <thead class="thead-dark">
         <tr>
         <th>ID</th>
         <th>Name</th>
         <th>Email</th>
-        <th>Password</th>
-        <th>Role</th>
+     <th>Role</th>
         <th>Department</th>
         <th>Action</th>
         </tr>
@@ -31,12 +31,11 @@
             <td>1</td>
             <td>Ajay</td>
             <td>ajay@gmail.com</td>
-            <td>23</td>
-            <td>Admin</td>
+         <td>Admin</td>
             <td>Software</td>
             <td>
-                <a style="color:green" href="/updateuser">Update</a> &nbsp
-                <a style="color:red" href="#">Delete</a> 
+                <a style="color:green;text-decoration:none" href="/updateuser">Update</a> &nbsp
+                <a style="color:red;text-decoration:none" href="#">Delete</a> 
             </td>
     </tbody>
 </table>
