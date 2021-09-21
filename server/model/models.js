@@ -9,15 +9,21 @@ var schema = new mongoose.Schema({
     type:String,
     required:true
     },
-    Role:{
+    password:{
         type:String,
         required:true
     },
-    Department:{
+    role:{
+        type:String,
+        required:true
+    },
+   
+    role:String,
+    department:{
         type:String,
         required:true
     }
 })
-const userdb = mongoose.model('userdb',schema)
+const Userdb = mongoose.model('userdb',schema)
 
-module.exports= userdb
+module.exports= Userdb
