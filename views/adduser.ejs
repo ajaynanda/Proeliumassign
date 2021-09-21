@@ -18,7 +18,7 @@
     <h2 style="background-color:aqua " class="text-center">User Profile Management </h2>
     <div class="container">
 
-<form action="/" method="POST">
+<form action="api/users" method="POST">
 
     <a href="/allusers" style="color:black;margin-top:50px ;font-size:30px;text-decoration:none;background-color:blue;border-radius:5px;padding:3px">All users</a>
     <h1>New User</h1>
@@ -33,11 +33,11 @@
     <input type="password" placeholder="re enter password" name="cpassword" id="cpassword">
     <label>Role</label>
 <select>
-   <option>Admin</option>
-    <option>User</option>
+   <option name="role">Admin</option>
+    <option name="role">User</option>
     </select>
     <label>Department</label>
-    <input type="text" placeholder="Department" name="Department" id="Department"><br>
+    <input type="text" placeholder="Department" name="department" id="department"><br>
     <input type="button" value="Save" class="btn btn-success">
 </form>
 </div>

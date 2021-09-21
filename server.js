@@ -4,10 +4,10 @@ const dotenv = require("dotenv")
 const morgan=require("morgan")
 const path = require("path")
 const connectDB = require("./server/database/connection")
-const bodyparser=require("body-parser")
+const bodyparser = require("body-parser")
 dotenv.config({path:".env"})
 const PORT=process.env.PORT || 4000
-app.use(bodyparser.urlencoded({extended:true}))
+app.use(bodyparser.urlencoded({ extended : true}))
 app.use(morgan("tiny"))
 connectDB();
 

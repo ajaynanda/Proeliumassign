@@ -18,7 +18,7 @@ var schema = new mongoose.Schema({
         required:true
     },
    
-    role:String,
+   
     department:{
         type:String,
         required:true

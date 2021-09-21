@@ -22,22 +22,43 @@ const user = new Userdb({
     res.send(data)
 })
 .catch(err=>{
-    res.status(500),send({message:err.message || "some error occured"})
+    res.status(500).send({message:err.message || "some error occured"})
 })
 }
 
 //retreiw a user
 
 exports.find=(req,res)=>{
-
+Userdb.find()
+.then(user=>{
+    res.send(user)
+})
+.catch(err=>{
+res.status(500).send({message:err.message || "Some error while reading user information"})
+})
 }
 
 //update user
 
-exports.update = (req,res)=>{
-
+exports.update=(req,res)=>{
+    if(!req.body){
+        return res
+        .status(400)
+        .send({message:"Data to updated cannot be empty"})
+    }
+    const id = req.params.id;
+    Userdb.findByIdAndUpdate(id,req.body)
+    .then(data=>{
+        if(!data){
+            res.status(400).send({message:"cannot update the user with ${id}"})
+        }else{
+            res.send(data)
+        }
+    })
+    .catch(err=>{
+        res.status(500).send({message:"Found error on updating the user"})
+})
 }
-
 //delete user
 
 exports.delete=(req,res)=>{
