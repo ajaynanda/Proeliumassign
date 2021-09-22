@@ -11,8 +11,7 @@ app.use(bodyparser.urlencoded({ extended : true}))
 app.use(morgan("tiny"))
 connectDB();
 
-app.use("/css",express.static(path.resolve(__dirname,"assets/css")))
-app.use("/img",express.static(path.resolve(__dirname,"assets/img"))) 
+
 app.use("/js",express.static(path.resolve(__dirname,"assets/js")))
 app.set("view engine","ejs")
 app.use("/",require('./server/routes/router'))
