@@ -16,31 +16,35 @@
         <a href="/adduser" style="color:black;margin-top:50px ;font-size:30px;text-decoration:none;background-color:blue;border-radius:5px;padding:3px">Add New User</a>
         <form action="/" method="POST">
 <table style="margin-top:50px" class="table">
-    <thead class="thead-dark">
+    <thead >
         <tr>
         <th>ID</th>
         <th>Name</th>
         <th>Email</th>
-     <th>Role</th>
+        <th>Role</th>
         <th>Department</th>
         <th>Action</th>
         </tr>
     </thead>
     <tbody>
+        <% for(var i=0;i < users.length;i++){%>
         <tr>
-            <td>1</td>
-            <td>Ajay</td>
-            <td>ajay@gmail.com</td>
-         <td>Admin</td>
-            <td>Software</td>
+            <td><%= i+1 %></td>
+            <td><%= users[i].name %></td>
+            <td><%= users[i].email %></td>
+            <td><%= users[i].role %></td>
+            <td><%= users[i].department %></td>
             <td>
-                <a style="color:green;text-decoration:none" href="/updateuser">Update</a> &nbsp
-                <a style="color:red;text-decoration:none" href="#">Delete</a> 
+                <a style="color:green;text-decoration:none" href="/updateuser?id=<%= users[i]._id%>">Update</a> &nbsp
+                <a style="color:red;text-decoration:none" href="/api/users">Delete</a> 
             </td>
+            </tr>
+            <% } %>
     </tbody>
 </table>
 
         </form>
+    
     </div>
 </body>
 </html>

@@ -19,7 +19,8 @@ const user = new Userdb({
  user
  .save(user)
  .then(data=>{
-    res.send(data)
+    //res.send(data)
+    res.redirect('/adduser')
 })
 .catch(err=>{
     res.status(500).send({message:err.message || "some error occured"})

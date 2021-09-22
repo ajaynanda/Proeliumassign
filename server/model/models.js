@@ -13,6 +13,7 @@ var schema = new mongoose.Schema({
         type:String,
         required:true
     },
+  
     role:{
         type:String,
         required:true
@@ -24,6 +25,6 @@ var schema = new mongoose.Schema({
         required:true
     }
 })
-const Userdb = mongoose.model('userdb',schema)
+const Userdb = mongoose.model('Userdb',schema)
 
 module.exports= Userdb

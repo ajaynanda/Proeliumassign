@@ -17,26 +17,23 @@
 <body>
     <h2 style="background-color:aqua " class="text-center">User Profile Management </h2>
     <div class="container">
-<form action="/updated" method="POST">
+<form action="/updateuser"  method="POST" id="updateuser"> 
 
-    <a href="/allusers" style="color:black;margin-top:50px ;font-size:30px;text-decoration:none;background-color:blue;border-radius:5px;padding:3px">All users</a>
+    <a href="/" style="color:black;margin-top:50px ;font-size:30px;text-decoration:none;background-color:blue;border-radius:5px;padding:3px">All users</a>
     <h3>Update user</h3>
     <label>Full name</label>
-    <input type="text" placeholder="full name" name="name" id="name">
+    <input type="text" placeholder="full name" name="name" value="<%= user.name %>" id="name">
     <label>Email</label>
-    <input type="email" placeholder="email" name="email" id="email">
+    <input type="email" placeholder="email" value="<%= user.email %>" name="email" id="email">
     <label>Password</label>
-    <input type="password" placeholder="password" name="password" id="password">
+    <input type="password" placeholder="password" value="<%= user.password %>" name="password" id="password">
     <label>confirm password</label>
-    <input type="password" placeholder="re enter password" name="cpassword" id="cpassword">
+    <input type="password" placeholder="re enter password" value="<%= user.cpassword %>" name="cpassword" id="cpassword">
     <label>Role</label>
-<select>
-   <option>Admin</option>
-    <option>User</option>
-    </select>
+    <input type="text" placeholder="Admin/user"  value="<%= user.role %>" name="role" id="role">
     <label>Department</label>
-    <input type="text" placeholder="Department" name="Department" id="Department"><br>
-    <input type="button" value="Save" class="btn btn-success">
+    <input type="text" placeholder="Department" name="Department"  value="<%= user.department %>" id="Department"><br>
+    <button type="submit"  class="btn btn-success">Update</button>
 </form>
 </div>
 </body>
