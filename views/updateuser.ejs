@@ -17,11 +17,12 @@
 <body>
     <h2 style="background-color:aqua " class="text-center">User Profile Management </h2>
     <div class="container">
-<form action="/updateuser"  method="POST" id="updateuser"> 
+<form method="POST" id="updateuser"> 
 
     <a href="/" style="color:black;margin-top:50px ;font-size:30px;text-decoration:none;background-color:blue;border-radius:5px;padding:3px">All users</a>
     <h3>Update user</h3>
     <label>Full name</label>
+    <input type="hidden"  name= "id" value="<%= user._id %>">
     <input type="text" placeholder="full name" name="name" value="<%= user.name %>" id="name">
     <label>Email</label>
     <input type="email" placeholder="email" value="<%= user.email %>" name="email" id="email">
@@ -33,9 +34,11 @@
     <input type="text" placeholder="Admin/user"  value="<%= user.role %>" name="role" id="role">
     <label>Department</label>
     <input type="text" placeholder="Department" name="Department"  value="<%= user.department %>" id="Department"><br>
-    <button type="submit"  class="btn btn-success">Update</button>
+    <button type="submit"  class="btn btn-success update">Update</button>
 </form>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="js/index.js"></script>
 </body>
 </html>
 

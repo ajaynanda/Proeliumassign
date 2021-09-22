@@ -20,7 +20,8 @@ route.get("/adduser",(req,res)=>{
 
 route.get("/updateuser",(req,res)=>{
     axios.get('http://localhost:4000/api/users',{params:{id:req.query.id}})
-    .then(userdata=>{
+
+    .then(function(userdata){
         res.render("updateuser",{user:userdata.data})
     })
    .catch(err=>{

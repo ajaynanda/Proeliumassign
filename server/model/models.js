@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-
+//let[name,email,password,cpassword,role,department]=req.body
 var schema = new mongoose.Schema({
     name:{
         type:String,
