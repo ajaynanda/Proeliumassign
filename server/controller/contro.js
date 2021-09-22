@@ -1,12 +1,12 @@
 var Userdb = require("../model/models")
 
-
 //create and save new user
 exports.create=(req,res)=>{
 if(!req.body){
     res.status(400).send({message:"Content cannot be empty"})
     return;
 }
+
 const user = new Userdb({
     name:req.body.name,
     email:req.body.email,
@@ -47,7 +47,7 @@ exports.update=(req,res)=>{
         .send({message:"Data to updated cannot be empty"})
     }
     const id = req.params.id;
-    Userdb.findByIdAndUpdate(id,req.body)
+    Userdb.findByIdAndUpdate(id,req.body,{useFindAndModify:false})
     .then(data=>{
         if(!data){
             res.status(400).send({message:"cannot update the user with ${id}"})
@@ -62,5 +62,17 @@ exports.update=(req,res)=>{
 //delete user
 
 exports.delete=(req,res)=>{
+        const id =req.params.id
+        Userdb.findByIdAndDelete(id)
+        .then(data=>{
+            if(!data){
+                res.status(404).send({message:`cannot delete with id ${id} Maybe wrong id`})
+            }else{
+                res.send({message:"user id was deleted"})
+            }
+        })
 
+.catch(err=>{
+res.status(500).send({message:"could not delete user with id"+id})
+})
 }
